@@ -1,5 +1,7 @@
 # SignalDesk Export Worker
 
+**Not for production use.**
+
 A least-privilege Python 3.11 Redis Streams worker that claims export jobs from the SignalDesk control API, fetches only API-authoritative tenant-scoped diagnostics, deterministically renders CSV/JSON, and writes confined artifacts to the synthetic MinIO fixture.
 
 Run with `signaldesk-export-worker` or one bounded poll with `signaldesk-export-worker --once`.
@@ -71,3 +73,7 @@ completion contract and exact final object path do not change. If the current bu
 policy or lifecycle permits only the final key or deletes canonical keys, deployment
 remains blocked: no worker-only timeout increase can close that stale server-side PUT
 window.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
